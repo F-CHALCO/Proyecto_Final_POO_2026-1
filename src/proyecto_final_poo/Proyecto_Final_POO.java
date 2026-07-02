@@ -14,6 +14,7 @@ public class Proyecto_Final_POO {
      */
     public static void main(String[] args) {
         System.out.println("Quiero keke");
+        System.out.println("Hola");
     }
 
 }
