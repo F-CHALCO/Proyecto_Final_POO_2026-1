@@ -9,11 +9,11 @@ package Inmobiliaria.modelo;
  */
 public class AsesorVenta extends Empleado {
     private Venta[] ventasRealizadas;
-    private int     cantVentas;
-    private double  metaVentas;
+    private int cantVentas;
+    private double metaVentas;
     private static final int MAX_VENTAS = 100;
 
-    public AsesorVenta(Venta[] ventasRealizadas, int cantVentas, double metaVentas, String usuario, String contrasena, String rol, String dni, String nombres, String apellidos, String telefono, String correo) {
+    public AsesorVenta(double metaVentas, String usuario, String contrasena, String rol, String dni, String nombres, String apellidos, String telefono, String correo) {
         super(usuario, contrasena, rol, dni, nombres, apellidos, telefono, correo);
         this.ventasRealizadas = new Venta[MAX_VENTAS];
         this.cantVentas = cantVentas;
@@ -38,7 +38,7 @@ public class AsesorVenta extends Empleado {
     public int    getCantVentas() { return cantVentas; }
     public double getMetaVentas() { return metaVentas; }
 
-    // Polimorfismo: cada subclase implementa generarReporte() distinto (semana 11)
+    
     @Override
     public String generarReporte() {
         return "=== Reporte Asesor: " + getDatosCompletos() + " ===" +
