@@ -14,7 +14,7 @@ public class Proyecto {
     private int    numPisos;
     private String fechaInicio;
     private String fechaEntrega;
-    private String estado; // Constantes.PROY_*
+    private String estado; 
 
    
     private Departamento[] departamentos;
@@ -163,7 +163,7 @@ public class Proyecto {
 
     public void setCantDepartamentos(int cantDepartamentos) {
         this.cantDepartamentos = cantDepartamentos;
-    }
+    }   
 
     @Override
     public String toString() {
