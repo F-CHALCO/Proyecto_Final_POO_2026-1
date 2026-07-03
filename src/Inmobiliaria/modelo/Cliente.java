@@ -87,7 +87,7 @@ public class Cliente extends Persona{
                "\nFecha de nac.    : " + fechaNacimiento +
                "\nOcupacion        : " + ocupacion +
                "\nIngresos mensual : S/ " + ingresosMensuales +
-               "\nReservas activas : " + cantReservas;
+               "\nReservas activas : " + cantReservas;  
     }
     
     
