@@ -21,14 +21,39 @@ public class Acabado {
         this.categoria       = categoria;
     }
 
-    public String getNombre()                  { return nombre; }
-    public void   setNombre(String n)          { this.nombre = n; }
-    public String getDescripcion()             { return descripcion; }
-    public void   setDescripcion(String d)     { this.descripcion = d; }
-    public double getPrecio()                  { return precioAdicional; }
-    public void   setPrecioAdicional(double p) { this.precioAdicional = p; }
-    public String getCategoria()               { return categoria; }
-    public void   setCategoria(String c)       { this.categoria = c; }
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public double getPrecio() {
+        return precioAdicional;
+    }
+
+    public void setPrecioAdicional(double precioAdicional) {
+        this.precioAdicional = precioAdicional;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+
 
     @Override
     public String toString() {
