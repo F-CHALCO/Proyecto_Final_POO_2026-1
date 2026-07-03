@@ -2,9 +2,14 @@
 package Inmobiliaria.servicio;
 
 import Inmobiliaria.modelo.Acabado;
+import Inmobiliaria.modelo.Administrador;
+import Inmobiliaria.modelo.AsesorVenta;
 import Inmobiliaria.modelo.Cliente;
+import Inmobiliaria.modelo.Constantes;
+import Inmobiliaria.modelo.Departamento;
 import Inmobiliaria.modelo.Empleado;
 import Inmobiliaria.modelo.Proyecto;
+import Inmobiliaria.modelo.Reserva;
 import Inmobiliaria.modelo.Venta;
 
 /**
@@ -40,10 +45,16 @@ public class GestorSistema {
         empleadoLogueado = null;
 
         agregarEmpleado(new Administrador(
-            "00000001", "Admin", "Sistema",
-            "999000001", "admin@inmob.pe",
-            "admin", "admin123", 3
-        ));
+    3,                 
+    "admin",           
+    "admin123",        
+    "Administrador",   
+    "00000001",        
+    "Admin",           
+    "Sistema",          
+    "999000001",        
+    "admin@inmob.pe"    
+    ));
     }
 
     
@@ -56,11 +67,10 @@ public class GestorSistema {
         }
         return false;
     }
-
+    
     public void     logout()              { empleadoLogueado = null; }
     public Empleado getEmpleadoLogueado() { return empleadoLogueado; }
-
-    // Comparacion por rol String - sin instanceof (semana 6 atributos)
+    
     public boolean esAdmin() {
         return empleadoLogueado != null &&
                empleadoLogueado.getRol().equals(Constantes.ROL_ADMIN);
@@ -192,7 +202,7 @@ public class GestorSistema {
         if (!dpto.estaDisponible()) return null;
         if (!dpto.reservar()) return null;
 
-        // Cast seguro porque ya verificamos el rol
+        
         AsesorVenta asesor = (AsesorVenta) empleadoLogueado;
         Reserva r = new Reserva(cliente, dpto, asesor,
                                 montoSep, vigencia, fechaHoy);
