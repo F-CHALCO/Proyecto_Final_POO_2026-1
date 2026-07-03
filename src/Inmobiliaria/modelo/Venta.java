@@ -57,7 +57,7 @@ public class Venta {
             if (cronogramaPagos[i].getNumeroCuota() == numeroCuota) {
                 boolean ok = cronogramaPagos[i].registrarPago(fechaPago);
                 if (ok) {
-                    saldoPendiente = saldoPendiente - cronogramaPagos[i].getMonto();
+                    saldoPendiente = saldoPendiente - cronogramaPagos[i].getMontoCuota();
                 }
                 return ok;
             }
@@ -69,7 +69,7 @@ public class Venta {
         double saldo = 0;
         for (int i = 0; i < cantCuotas; i++) {
             if (!cronogramaPagos[i].isPagado()) {
-                saldo = saldo + cronogramaPagos[i].getMonto();
+                saldo = saldo + cronogramaPagos[i].getMontoCuota();
             }
         }
         return saldo;
