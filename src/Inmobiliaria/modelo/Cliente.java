@@ -23,7 +23,7 @@ public class Cliente extends Persona{
         this.ocupacion = ocupacion;
         this.ingresosMensuales = ingresosMensuales;
         this.reservas = new Reserva[MAX_RESERVAS];
-        this.cantReservas = cantReservas;
+        this.cantReservas = 0;
     }
 
     public String getFechaNacimiento() {
