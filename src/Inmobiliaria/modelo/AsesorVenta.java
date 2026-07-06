@@ -8,20 +8,29 @@ package Inmobiliaria.modelo;
  * Encontrá más código en mi repo de GitHub: https://github.com/CharlyCimino
  */
 public class AsesorVenta extends Empleado {
+
     private Venta[] ventasRealizadas;
     private int cantVentas;
     private double metaVentas;
+
     private static final int MAX_VENTAS = 100;
 
-    public AsesorVenta(double metaVentas, String usuario, String contrasena, String rol, String dni, String nombres, String apellidos, String telefono, String correo) {
+    public AsesorVenta(double metaVentas, String usuario, String contrasena,
+                       String rol, String dni, String nombres,
+                       String apellidos, String telefono, String correo) {
+
         super(usuario, contrasena, rol, dni, nombres, apellidos, telefono, correo);
+
         this.ventasRealizadas = new Venta[MAX_VENTAS];
-        this.cantVentas = cantVentas;
+        this.cantVentas = 0; // Corregido
         this.metaVentas = metaVentas;
     }
-    
+
     public boolean agregarVenta(Venta v) {
-        if (cantVentas >= MAX_VENTAS) return false;
+        if (cantVentas >= MAX_VENTAS) {
+            return false;
+        }
+
         ventasRealizadas[cantVentas] = v;
         cantVentas++;
         return true;
@@ -29,22 +38,27 @@ public class AsesorVenta extends Empleado {
 
     public double getComision() {
         double total = 0;
+
         for (int i = 0; i < cantVentas; i++) {
-            total = total + ventasRealizadas[i].getPrecioFinal();
+            total += ventasRealizadas[i].getPrecioFinal();
         }
+
         return total * 0.02;
     }
 
-    public int    getCantVentas() { return cantVentas; }
-    public double getMetaVentas() { return metaVentas; }
+    public int getCantVentas() {
+        return cantVentas;
+    }
 
-    
+    public double getMetaVentas() {
+        return metaVentas;
+    }
+
     @Override
     public String generarReporte() {
-        return "=== Reporte Asesor: " + getDatosCompletos() + " ===" +
-               "\nVentas realizadas : " + cantVentas +
-               "\nMeta de ventas    : S/ " + metaVentas +
-               "\nComision estimada : S/ " + getComision();
+        return "=== Reporte Asesor: " + getDatosCompletos() + " ==="
+                + "\nVentas realizadas : " + cantVentas
+                + "\nMeta de ventas    : S/ " + metaVentas
+                + "\nComision estimada : S/ " + getComision();
     }
-    
 }
