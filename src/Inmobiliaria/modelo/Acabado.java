@@ -42,8 +42,9 @@ public class Acabado {
     }
 
     public void setPrecioAdicional(double precioAdicional) {
+        if(precioAdicional >= 0){
         this.precioAdicional = precioAdicional;
-    }
+    }}
 
     public String getCategoria() {
         return categoria;
