@@ -4,7 +4,7 @@ Sistema de Gestión para una Inmobiliaria.
 
 ## Integrantes
 - Orlando Camacho
-- 
+- Fabricio Chalco
 
 ## Tecnologías
 - Java
