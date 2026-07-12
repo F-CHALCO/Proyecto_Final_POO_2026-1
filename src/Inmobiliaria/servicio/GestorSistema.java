@@ -10,6 +10,7 @@ import Inmobiliaria.modelo.Empleado;
 import Inmobiliaria.modelo.Proyecto;
 import Inmobiliaria.modelo.Reserva;
 import Inmobiliaria.modelo.Venta;
+import Inmobiliaria.modelo.Gerente;
 
 public class GestorSistema {
 
@@ -374,12 +375,13 @@ public class GestorSistema {
             resultado += "Proyecto: " + p.getNombre()
                       + " | " + p.getDistrito()
                       + " | " + p.getEstado() + "\n";
-            for (Departamento d : p.getDepartamentos()) {
-                if (d.getEstado().equals(Constantes.DPTO_DISPONIBLE)) disp++;
-                else if (d.getEstado().equals(Constantes.DPTO_RESERVADO)) res++;
-                else vend++;
-                resultado += "  " + d.toString() + "\n";
-            }
+            Departamento[] dptos = p.getDepartamentos();
+                for (int k = 0; k < dptos.length; k++) {
+                    if (dptos[k].getEstado().equals(Constantes.DPTO_DISPONIBLE)) disp++;
+                    else if (dptos[k].getEstado().equals(Constantes.DPTO_RESERVADO)) res++;
+                    else vend++;
+                    resultado += "  " + dptos[k].toString() + "\n";
+                }
             resultado += "  Resumen: " + disp + " disponibles | "
                       + res + " reservados | " + vend + " vendidos\n\n";
         }
