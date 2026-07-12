@@ -8,10 +8,14 @@ package Inmobiliaria.modelo;
  * Encontrá más código en mi repo de GitHub: https://github.com/CharlyCimino
  */
 public class Gerente extends Empleado {
+    
     private String areaResponsable;
 
-    public Gerente(String usuario, String contrasena, String rol, String dni, String nombres, String apellidos, String telefono, String correo) {
+    public Gerente(String areaResponsable, String usuario, String contrasena,
+                   String rol, String dni, String nombres,
+                   String apellidos, String telefono, String correo) {
         super(usuario, contrasena, rol, dni, nombres, apellidos, telefono, correo);
+        this.areaResponsable = areaResponsable;
     }
 
     public String getAreaResponsable() {
@@ -27,6 +31,4 @@ public class Gerente extends Empleado {
         return "=== Reporte Gerente: " + getDatosCompletos() + " ===" +
                "\nArea responsable: " + areaResponsable;
     }
-    
-    
 }
