@@ -1,6 +1,8 @@
 
 package proyecto_final_poo;
 
+import Inmobiliaria.servicio.GestorSistema;
+
 /**
  *
  * @author Charly Cimino
@@ -8,13 +10,11 @@ package proyecto_final_poo;
  * Encontrá más código en mi repo de GitHub: https://github.com/CharlyCimino
  */ 
 public class Proyecto_Final_POO {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        System.out.println("Quiero keke");
-        System.out.println("Hola");
+        GestorSistema sistema = new GestorSistema();
+        imprimir("El sistema ha iniciado correctamente en modo consola.");
     }
-
+    public static void imprimir(String cadena) {
+        System.out.println(cadena);
+    }
 }
