@@ -1,6 +1,6 @@
-
 package proyecto_final_poo;
 
+import Inmobiliaria.gui.LoginFrame;
 import Inmobiliaria.servicio.GestorSistema;
 
 /**
@@ -12,9 +12,10 @@ import Inmobiliaria.servicio.GestorSistema;
 public class Proyecto_Final_POO {
     public static void main(String[] args) {
         GestorSistema sistema = new GestorSistema();
-        imprimir("El sistema ha iniciado correctamente en modo consola.");
-    }
-    public static void imprimir(String cadena) {
-        System.out.println(cadena);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new LoginFrame(sistema).setVisible(true);
+            }
+        });
     }
 }
